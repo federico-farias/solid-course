@@ -1,4 +1,4 @@
-package com.bintics.solid.lsp;
+package com.bintics.solid.lsp.op02;
 
 public interface UserAccountRepository {
 

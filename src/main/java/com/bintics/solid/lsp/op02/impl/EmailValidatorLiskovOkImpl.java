@@ -1,8 +1,8 @@
-package com.bintics.solid.lsp.impl;
+package com.bintics.solid.lsp.op02.impl;
 
-import com.bintics.solid.lsp.UserAcountValidator;
-import com.bintics.solid.lsp.EmailMalformedException;
-import com.bintics.solid.lsp.UserAccountInfo;
+import com.bintics.solid.lsp.op02.UserAcountValidator;
+import com.bintics.solid.lsp.op02.EmailMalformedException;
+import com.bintics.solid.lsp.op02.UserAccountInfo;
 
 public class EmailValidatorLiskovOkImpl implements UserAcountValidator {
 

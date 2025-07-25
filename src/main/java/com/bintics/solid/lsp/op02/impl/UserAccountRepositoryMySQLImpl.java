@@ -1,7 +1,7 @@
-package com.bintics.solid.lsp.impl;
+package com.bintics.solid.lsp.op02.impl;
 
-import com.bintics.solid.lsp.UserAccountInfo;
-import com.bintics.solid.lsp.UserAccountRepository;
+import com.bintics.solid.lsp.op02.UserAccountInfo;
+import com.bintics.solid.lsp.op02.UserAccountRepository;
 
 public class UserAccountRepositoryMySQLImpl implements UserAccountRepository {
 
