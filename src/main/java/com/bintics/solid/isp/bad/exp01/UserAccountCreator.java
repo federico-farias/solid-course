@@ -13,12 +13,17 @@ public class UserAccountCreator {
 
     public IPersistenceProvider iPersistenceProvider;
 
-    public void create() {
+    public void create(UserInfoDto userInfo) {
         // TODO
-        iMandrilNotificationService.sendEmailAccountCreated("account@domain.com");
-        iRedisCacheSerivce.record(new ClassDummy());
-        iMySqlUserAccountService.save(new ClassDummy());
-        iPersistenceProvider.headerInterface("Value of provider 1", "Value of provider 2");
+        UserInfoDto user = (UserInfoDto) iRedisCacheSerivce.get(userInfo.getEmail());
+        if (user != null) {
+            return;
+        }
+
+        iMandrilNotificationService.sendEmailAccountCreated(userInfo.getEmail(), true);
+        iRedisCacheSerivce.record(userInfo.getEmail(), userInfo);
+        iMySqlUserAccountService.save(userInfo);
+        iPersistenceProvider.headerInterface(userInfo.getEmail(), userInfo, new TTLConfig(1000 * 60 * 60, 5));
     }
 
 }

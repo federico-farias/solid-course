@@ -1,13 +1,17 @@
-package com.bintics.solid.isp.bad.exp02.ownimpl;
+package com.bintics.solid.isp.bad.exp02;
 
-public class UserAccountCreator {
+import com.bintics.solid.isp.bad.exp02.ownimpl.IUserService;
+import com.bintics.solid.isp.bad.exp02.ownimpl.IXProviderNotificationService;
+import com.bintics.solid.isp.bad.exp02.ownimpl.UserInfo;
+
+public class UserAccountCreatorUseCase {
 
     public IUserService iUserService;
 
     // Refleja detalles de implementación (Refleja que utiliza al proveedor X)
     public IXProviderNotificationService notificationService;
 
-    public UserAccountCreator(IUserService iUserService, IXProviderNotificationService notificationService) {
+    public UserAccountCreatorUseCase(IUserService iUserService, IXProviderNotificationService notificationService) {
         this.iUserService = iUserService;
         this.notificationService = notificationService;
     }
